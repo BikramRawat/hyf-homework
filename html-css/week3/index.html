@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup Form/Page1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                    <img src="./images/companyLogo.png" alt="companyLogo">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="current">
+                            <a href="index.html">Page1</a>
+                        </li>
+                        <li>
+                            <a href="index2.html">Page2</a>
+                        </li>
+                        <li>
+                            <a href="index3.html">Page3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="showcase">
+            <div class="container">
+                <h2>Sign up to yourcustomtailor.com</h2>
+                <p>
+                    We can't wait to help you improve your life-style and gain the 
+                                                                                                                                    attention from people around you!
+                </p>
+                <p>
+                    Sign up below to save upto 70% on apparel,
+                                                                                                                                    hand-bags and cosmetics. Our agents are busy picking the best offers 
+                                                                                                                                    that match your prefences and style. Every week we will send
+                                                                                                                                    you a hand-picked selection - we just need to know a few details 
+                                                                                                                                    about you first....
+                </p>
+            </div>
+        </section>
+        <section id="progress">
+            <div class="container">
+                <h3>Step 1/4 - tell us who you are?</h3><br>
+                <h4>Progress</h4>
+                <div class="progressBar">
+                    <div class="progressOne"></div>
+                </div>
+            </div>
+        </section>
+        <section id="customerInfo">
+            <div class="container">
+                <div class="infoForm">
+                    <p>
+                        Nice to meet meet you. let's spend a minute to get 
+                                                                                                                                                to know each other? Please enter the following:
+                    </p><br>
+                    <form>
+                        <div>
+                            <label for="fname">First name*</label>
+                            <input type="fname" name="fname" id="fname" required>
+                            <label for="lname">Last name*</label>
+                            <input type="lname" name="lname" id="lname" required>
+                        </div><br>
+                        <div>
+                            <label for="country">Country*</label>
+                            <select name="country" id="country" required>
+                                <option>
+                                    <label>Select a country...</label>
+                                </option>
+                                <option value="Afganisthan">Afganisthan</option>
+                                <option value="Australia">Australia</option>
+                                <option value="CzecRepublic">CzecRepublic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Island">Island</option>
+                                <option label="Mongolia" value="Mongolia"></option>
+                                <option value="Norway">Norway</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="USA">USA</option>
+                            </select>
+                        </div><br>
+                        <div>
+                            <label for="address">Street address*</label>
+                            <input type="text" name="address" id="address" required>
+                            <label for="postalCode">Post code*</label>
+                            <input type="number" name="postalCode" id="postalCode" maxlength="4" required>
+                        </div><br>
+                        <div class="description">
+                            <label>Profile description</label>
+                            <br>
+                            <p>Please provide a short description of yourself to be displayed
+                                                                                                                                                                                on our social community pages.
+                            </p>
+                            <textarea name="description" id="description" maxlength="500"></textarea>
+                        </div>
+                        <div class="shippingAddress">
+                            <p>Use the same address for billing and shipping? Uncheck 
+                                                                                                                                                                                below to fill out a separate shipping address.
+                            </p>
+                            <label for="shippingAddress">Shipping address</label>
+                            <input type="checkbox" name="shippingAddress" id="shippingAddress" onclick="myFunction()">
+                        </div>
+                        <input type="submit" name="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="infoForm">
+            <div class="container">
+                <form>
+                    <aside id="hiddenForm" style="display: none">
+                        <div>
+                            <label for="fname">First name*</label>
+                            <input type="fname" name="fname" id="fname" required>
+                            <label for="lname">Last name*</label>
+                            <input type="lname" name="lname" id="lname" required>
+                        </div><br>
+                        <div>
+                            <label for="country">Country*</label>
+                            <select name="country" id="country" required>
+                                <option>
+                                    <label>Select a country...</label>
+                                </option>
+                                <option value="Afganisthan">Afganisthan</option>
+                                <option value="Australia">Australia</option>
+                                <option value="CzecRepublic">CzecRepublic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Island">Island</option>
+                                <option label="Mongolia" value="Mongolia"></option>
+                                <option value="Norway">Norway</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="USA">USA</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="address">Street address*</label>
+                            <input type="text" name="address" id="address" required>
+                            <label for="postalCode">Post code*</label>
+                            <input type="number" name="postalCode" id="postalCode" maxlength="4" required>
+                        </div>
+                    </aside>
+                </form>
+            </div>
+        </section>
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("shippingAddress");
+                var hiddenForm = document.getElementById("hiddenForm");
+                if (checkBox.checked == true) {
+                    hiddenForm.style.display = "block";
+                } else {
+                    hiddenForm.style.display = "none";
+                }
+            }
+        </script>
+        <footer>
+            <div class="container">
+                <form>
+                <button type="submit" class="buttonNext">
+                    <a href="index2.html">Next step</a>
+                </button>
+                </form>
+            </div>
+        </footer>
+    </body>
+</html>

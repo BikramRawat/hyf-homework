@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup Form/Page 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="mainLogo">
+                    <img src="./images/companyLogo.png" alt="companyLogo">
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="index.html">Page1</a>
+                        </li>
+                        <li class="current">
+                            <a href="index2.html">Page2</a>
+                        </li>
+                        <li>
+                            <a href="index3.html">Page3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="showcase">
+            <div class="container">
+                <h2>Sign up to yourcustomtailor.com</h2>
+            </div>
+        </section>
+        <section id="progressbar">
+            <div class="container">
+                <h3>Step 2/4 - how can we reach you?</h3><br>
+                <h4>Progress</h4>
+                <div class="progressBar">
+                    <div class="progressTwo"></div>
+                </div>
+            </div>
+        </section>
+        <section id="customerInfo">
+            <div class="container">
+                <div class="infoForm">
+                    <p>
+                        We will probably need to stay in touch somehow. Let's know how we can   reach you?
+                    </p><br>
+                    <form>
+                        <div>
+                            <label for="email">Email*</label>
+                            <input type="email" name="email" id="email" required>
+                            <label for="phone">Phone*</label>
+                            <input type="tel" name="phone" id="phone">
+                        </div><br>
+                        <div>
+                            <label for="password">Password*</label>
+                            <input type="password" name="password" id="password" required>
+                        </div><br>
+                        <div>
+                            <label for="password">
+                                Re-enter Password*</label>
+                            <input type="password" name="password" id="password" required>
+                        </div><br>
+                        <div>
+                            <p>I want to sign up for the newsletter</p>
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <label for="newsletter">Weekly news</label>
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <label for="newsletter">Monthly news</label>
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <label for="newsletter">Don't send me news</label>
+                        </div>
+                        <input type="submit" name="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <button type="submit" class="buttonNext">
+                    <a href="index3.html">Next step</a>
+                </button>
+            </div>
+        </footer>
+    </body>
+</html>
