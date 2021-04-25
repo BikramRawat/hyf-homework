@@ -3,3 +3,8 @@ in the new branch named git_exercise_2
 iam quite interested . 
 this is exercise 2 og git.
 and its a added paragraph.
+
+This is another added page 
+to this file. I pulled the 
+request to merge the git_exercise_2 branch  into the master 
+branch.
