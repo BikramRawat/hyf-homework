@@ -2,3 +2,6 @@ hi good morning
 this is a apple file
 this is my first code in git 
 thanks
+hi again,
+this is the added paragraph for apples 
+thanks again
