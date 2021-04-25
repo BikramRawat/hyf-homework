@@ -1,0 +1,3 @@
+hi, this is my first paragraph 
+in the new branch named git_exercise_2
+iam quite interested . 
