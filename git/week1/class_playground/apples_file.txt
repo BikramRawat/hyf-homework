@@ -1,0 +1,4 @@
+hi good morning
+this is a apple file
+this is my first code in git 
+thanks
