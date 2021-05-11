@@ -3,14 +3,11 @@ const familySizePizza = confirm("Do you like to order family size pizza ? if yes
 const pizzaPrice = 60;
 const nameOfPizza = prompt("Enter the name of the pizza ?");
 let totalPrice = amountOfPizza * pizzaPrice;
-if(familySizePizza){
-    doublePrice = pizzaPrice * 2;
-    console.log(`The price of pizaa is double: $${doublePrice}`);
-    console.log(`New pizza order: ${amountOfPizza} pizzas, the name of pizza is : ${nameOfPizza} `);
-    totalNewPrice = doublePrice * amountOfPizza;
-    console.log(`Total cost for the order is : $${totalNewPrice}`);
+if (familySizePizza) {
+    const doublePizzaPrice = pizzaPrice * 2;
+    totalPrice = amountOfPizza * doublePizzaPrice;
+    console.log(`The price of pizza is double: $${doublePizzaPrice}`);
 }
-else {
-    console.log(`New pizza order: ${amountOfPizza} pizzas, the name of pizza is : ${nameOfPizza} `);
-    console.log(`Total cost for the order is : $${totalPrice}`);
-}
+
+console.log(`New pizza order: ${amountOfPizza} pizzas, the name of pizza is: ${nameOfPizza}`);
+console.log(`Total cost for the order is: $${totalPrice}`);
