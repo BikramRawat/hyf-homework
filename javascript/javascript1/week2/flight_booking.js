@@ -11,17 +11,24 @@ function getFullname(firstname,surname,useFormalName,gender){
         return `Lord ${firstname} ${surname}`;
     }else if(gender==='female'){
         return `Lady ${firstname} ${surname}`;
+    }else {
+        return `Other ${firstname} ${surname}`;
     }
-return `Other ${firstname} ${surname}`;
-const fullname1=getFullname('','');
-const fullname2=getFullname('Bikram','Rawat',true, 'male');
-const fullname3=getFullname('Bhabana','Thapa',true,'female');
-const fullname4=getFullname('Emile','Dragos',false);
-const fullname5=getFullname('Micheal','Jackson');
-const fullname6=getFullname('Karle','Siminov',true);
-console.log(fullname1);
-console.log(fullname2);
-console.log(fullname3);
-console.log(fullname4);
-console.log(fullname5);
-console.log(fullname6);
+}
+    const fullname1=getFullname('','');
+    console.log(fullname1);
+
+    const fullname2=getFullname('Bikram','Rawat',true, 'male');
+    console.log(fullname2);
+
+    const fullname3=getFullname('Bhabana','Thapa',true,'female');
+    console.log(fullname3);
+
+    const fullname4=getFullname('Emile','Dragos',false);
+    console.log(fullname4);
+
+    const fullname5=getFullname('Micheal','Jackson');
+    console.log(fullname5);
+
+    const fullname6=getFullname('Karle','Siminov',true);
+    console.log(fullname6);
