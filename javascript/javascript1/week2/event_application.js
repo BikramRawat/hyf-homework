@@ -12,4 +12,3 @@
 }
 getEventWeekday(13);
 getEventWeekday(7);
-getEventWeekday(15);
