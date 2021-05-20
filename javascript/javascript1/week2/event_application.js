@@ -7,8 +7,8 @@
         return daysOfWeek[daoOfEvent];
    
         /*console.log(`Today is : ${today}\n \nThe number for the day is: ${today.getDay()}`);
-    console.log(`The number for the event day in future is: ${futureEventdayNumber}`);
-    console.log(`Therefore:the event will be held on : ${daysOfWeek[dayOfEvent]} `);*/
+         console.log(`The number for the event day in future is: ${futureEventdayNumber}`);
+         console.log(`Therefore:the event will be held on : ${daysOfWeek[dayOfEvent]} `);*/
 }
 getEventWeekday(13);
 getEventWeekday(7);
