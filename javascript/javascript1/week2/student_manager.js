@@ -31,5 +31,6 @@ addStudentToClass('Anca');
 addStudentToClass('Olivia');
 addStudentToClass('Austin');
 addStudentToClass('Queen');
+addStudentToClass('Queen');
 getNumberOfStudents();
 console.log(`The list of students name is : ${class07Students}`);
