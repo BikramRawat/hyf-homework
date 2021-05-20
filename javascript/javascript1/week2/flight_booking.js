@@ -1,21 +1,19 @@
 function getFullname(firstname,surname,useFormalName,gender){
-    if(firstname===' ' || surname===' '){
+    if(firstname==='' || surname===''){
         console.log('Enter the valid name ?');
   // prompt('enter the valid firstname and surname');
     }
     if(useFormalName){
-        if(gender==='male'){
-            return `Lord ${firstname} ${surname}`;
-        }else if(gender==='female'){
-            return `Lady ${firstname} ${surname}`;
-        }else{
-            return `Other ${firstname} ${surname}`;
-        }
-    }else{
         return `${firstname} ${surname}`;
     }
-}
-const fullname1=getFullname(' ',' ');
+
+    if(gender==='male'){
+        return `Lord ${firstname} ${surname}`;
+    }else if(gender==='female'){
+        return `Lady ${firstname} ${surname}`;
+    }
+return `Other ${firstname} ${surname}`;
+const fullname1=getFullname('','');
 const fullname2=getFullname('Bikram','Rawat',true, 'male');
 const fullname3=getFullname('Bhabana','Thapa',true,'female');
 const fullname4=getFullname('Emile','Dragos',false);
