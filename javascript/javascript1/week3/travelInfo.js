@@ -1,10 +1,12 @@
 const travelInformation = {
-    speed: 50,
-    destinationDistance: 432,
-  };
-  function findTravelTime(travelInformarion){
-      let time = travelInformarion.destinationDistance/travelInformation.speed;
-       return `${Math.floor(time)} hours and ${Math.floor((time-Math.floor(time)) * 60)} minutes`;
-  }
-  const travelTime = findTravelTime(travelInformation);
-  console.log(travelTime); // 4 hours and 42 minutes
+  speed: 50,
+  destinationDistance: 432,
+};
+function findTravelTime(travelInformation) {
+  const time = travelInformation.destinationDistance / travelInformation.speed;
+  const hours = Math.floor(time);
+  const minutes = Math.floor((time - hours) * 60);
+  return `Total travel time is: ${hours} hours and ${minutes} minutes`;
+}
+const travelTime = findTravelTime(travelInformation);
+console.log(travelTime);
