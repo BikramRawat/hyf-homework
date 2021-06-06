@@ -45,8 +45,6 @@ function eventListenerOption()
     {
         button.addEventListener("mouseover",spiritAnimalOutput);
         button.removeEventListener("click", spiritAnimalOutput);
-        // on mouseover the spriritAnimalOutput function is not working, i dont know why?? 
-        //when we hover the mouse over the button, the function is not running
     }
     else
     {
