@@ -17,10 +17,10 @@ function spiritAnimalNameGenerator(name) {
 }
 
 function spiritAnimalOutput() {
-    const getName = document.querySelector('#name');
+    const nameInput = document.querySelector('#name');
     const message = document.querySelector('#spiritName');
-    if (getName.value !== '') {
-        message.innerHTML = `${getName.value} - ${spiritAnimalNameGenerator(getName)}`;
+    if (nameInput.value !== '') {
+        message.innerHTML = `${nameInput.value} - ${spiritAnimalNameGenerator(nameInput)}`;
     } else {
         message.innerHTML = 'Provide a name:';
     }
@@ -33,22 +33,22 @@ const button = document.querySelector(".clickButton");
 button.addEventListener("click", spiritAnimalOutput);
 
 
-function eventListenerOption()
-{
-    if(select.selectedIndex == 1)
-    {
-        button.addEventListener("click", spiritAnimalOutput);
-        button.removeEventListener("mouseover",spiritAnimalOutput);
+function eventListenerOption(){
+    
+    switch(select.value){
 
-    }
-    else if(select.selectedIndex == 2)
-    {
-        button.addEventListener("mouseover",spiritAnimalOutput);
-        button.removeEventListener("click", spiritAnimalOutput);
-    }
-    else
-    {
-        button.addEventListener("click", spiritAnimalOutput);
-        button.removeEventListener("mouseover",spiritAnimalOutput);
+        case 'Click':
+            button.addEventListener("click", spiritAnimalOutput);
+            button.removeEventListener("mouseover",spiritAnimalOutput);
+            break;
+
+        case 'Hover':
+            button.addEventListener("mouseover",spiritAnimalOutput);
+            button.removeEventListener("click", spiritAnimalOutput);
+            break;
+
+        default:
+            button.addEventListener("click", spiritAnimalOutput);
+            button.removeEventListener("mouseover",spiritAnimalOutput);
     }
 }
