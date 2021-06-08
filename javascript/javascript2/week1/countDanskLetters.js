@@ -1,4 +1,4 @@
-let countDanskLetters = danskString => {
+const countDanskLetters = danskString => {
 	const count_æ = (danskString.match(/æ/gi) || []).length;
     const count_ø = (danskString.match(/ø/gi) || []).length;
     const count_å = (danskString.match(/å/gi) || []).length;
