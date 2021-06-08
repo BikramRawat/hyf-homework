@@ -6,8 +6,8 @@ const findShortestWord = function(array){
     for(let word of array){
         if(word.length && word.length < shortestWordInArray.length){
                 shortestWordInArray = word;
-            }
         }
+    }
     return shortestWordInArray;
 }
 
