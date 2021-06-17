@@ -70,7 +70,12 @@ console.log('The movies containg keywords Surfer, Alien or Benjamin are:', ...co
 
 // Exercise Number 7 :
 
-
+const duplicateWordsInTitle = movies.filter(movie => {
+  const splitTitle = movie.title.toLowerCase().split(" ");
+  const resultDuplicate = splitTitle.some(word => splitTitle.indexOf(word) != splitTitle.lastIndexOf(word));
+  return resultDuplicate;
+});
+console.log(`The number of movies containing duplicate   words is : ${duplicateWordsInTitle.length}`);
 
 //Exercise Number 8 :
 
@@ -78,8 +83,10 @@ const averageMoviesRating = (movies.map(movie => movie.rating).reduce((accumlato
 console.log(`The average ratings of the movies is : ${averageMoviesRating}`);
 
 
-//Exercise Number 9 :
-
+//Exercise Number 9 : Count total number of good, bad and average movies using reduce 
+const countMovies = moviesWithExtraKey.reduce((acc, movie) => 
+({...acc, [movie.tag] : (++acc[movie.tag] || 1)}), {});
+console.log(countMovies);
 
 
 
