@@ -22,9 +22,17 @@ const moviesOf80s = movies.filter( movie => movie.year >= 1980 && movie.year < 1
 console.log(`The number of 1980's movies : ${moviesOf80s.length} `);
 
 // Exercise Number 4 :
-/*
+
 const moviesWithExtraKey = movies.map(movie => {
     const newArrayObject = {...movie};
+    if(movie.rating >= 7){
+        newArrayObject.tag = 'Good';
+    } else if (movie.rating < 4){
+        newArrayObject.tag = 'Bad';
+    } else {
+        newArrayObject.tag = 'Average';
+    }
+    /*
     switch (movie.rating){
         case movie.rating >= 7:
             newArrayObject.tag = 'Good';
@@ -35,28 +43,28 @@ const moviesWithExtraKey = movies.map(movie => {
         case movie.rating >= 4 && movie.rating < 7 :
             newArrayObject.tag = 'Average';
             break;
-    }
+    }*/
+
     return newArrayObject;
 });
 console.log('Movies with extra key as tag', ...moviesWithExtraKey);
-*/
+
 
 // the same solution with multiple ternary operator
 
 const moviesWithExtraKey = movies.map(movie=>{
-    const newCollection = {...movie};
-    movie.rating >=7 ? newCollection.tag='Good' 
-    : movie.rating <4 ? newCollection.tag='Bad' 
-    : newCollection.tag='Average';
-    return newCollection;
+    //const newCollection = {...movie};
+    movie.rating >=7 ? movies.tag='Good' 
+    : movie.rating <4 ? movies.tag='Bad' 
+    : movies.tag='Average';
 });
 console.log('Movies  with extra key : tag ', ...moviesWithExtraKey);
 
-// Exercise Number 5 :
+// Exercise Number 5 : chaining filter and map methods
 
-const chaining = movies.filter(movie => movie.rating > 6).map(movie => movie.rating);
-console.log(`The number of movies with rating > 6 are : ${chaining.length}`);
-console.log('The ratings are:', ...chaining);
+const movieRatingsGreaterThanSix = movies.filter(movie => movie.rating > 6).map(movie => movie.rating);
+console.log(`The number of movies with rating > 6 are : ${movieRatingsGreaterThanSix.length}`);
+console.log('The ratings are:', ...movieRatingsGreaterThanSix);
 
 // Exercise Number 6 :
 
