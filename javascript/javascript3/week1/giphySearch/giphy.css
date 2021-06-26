@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  
+  h1 {
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-style: italic, bold;
+  }
+  input {
+    padding: 10px;
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+  }
+  input:hover{
+    cursor: pointer;
+  }
+  #btn {
+   border: solid 2px;
+   background-color: orange;
+   padding: 10px;
+  font-size: 20px;  
+  }
+ #btn:hover{
+   color: blue;
+   background: cornsilk;
+   cursor: pointer;
+ }
+  img {
+      width: 50%;
+  }
