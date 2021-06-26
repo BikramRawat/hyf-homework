@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Bikram",
+        "isMarried": true,
+        "hobbies": ["music","coding","sports"],
+        "birthYear": 1990,
+        "kids":null,
+        "visitedCountries": [ {
+            "countryName": "Austria",
+            "visitYear": 2017,
+            "duration": "7 days"
+            },
+            {
+                "countryName": "USA",
+                "visitYear": 2018,
+                "duration": "15 days",
+                "withFamily": false,
+                "accidents":null
+            }
+        ]
+    },
+    {
+        "title": "pets",
+        "numberOfPets": 2,
+        "haveDog": true,
+        "petsName": ["cat","dog"],
+        "extraPets": []
+    }
+]
