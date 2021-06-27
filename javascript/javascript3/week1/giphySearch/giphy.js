@@ -2,7 +2,6 @@
 function displayGif(){
     const userInput = document.getElementById('input').value;
     const numberInput = document.getElementById('number').value;
-    const div = document.createElement('div');
     console.log(userInput);
     console.log(numberInput);
     const giphyApiKey = 'Vw1ofly2GK49lIzWNp8mkPTEgbVGmSnL'; 
@@ -11,12 +10,16 @@ function displayGif(){
         fetch(giphyApiUrl)
         .then(res => res.json())
         .then(api => {
-        console.log(api.data[0].images.fixed_height.url);
-        const imgPath = api.data[0].images.fixed_height.url;
-        const img = document.createElement('img');
-        img.setAttribute('src', imgPath);
-        div.appendChild(img);
-        document.body.appendChild(div);
+            api.data.forEach(element => {
+                console.log(element.images.fixed_height.url);
+                const imgPath = element.images.fixed_height.url;
+                const div = document.createElement('div');
+                const img = document.createElement('img');
+                img.setAttribute('src', imgPath);
+                div.appendChild(img);
+                document.body.appendChild(div);
+            });
+        
     });
     } else {
         alert('Enter the search gif and the number ...');
