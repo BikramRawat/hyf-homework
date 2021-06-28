@@ -9,7 +9,6 @@ function displayGif(){
         .then(res => res.json())
         .then(api => {
             api.data.forEach(element => {
-                console.log(element.images.fixed_height.url);
                 const imgPath = element.images.fixed_height.url;
                 const div = document.createElement('div');
                 const img = document.createElement('img');
