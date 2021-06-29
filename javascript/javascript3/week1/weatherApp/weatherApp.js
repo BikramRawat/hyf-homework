@@ -1,15 +1,16 @@
 
 const inputElement = document.getElementById('input-city');
 const btnElement = document.getElementById('weatherButton');
+const key = '6284b3975ab711a2f7c25e4a1d0434a9';
+let apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=YOUR_APP_ID';
 
 btnElement.addEventListener('click', ()=> {
 
     if(inputElement.value){
         const cityName = inputElement.value.toLowerCase();
-        let key = '6284b3975ab711a2f7c25e4a1d0434a9';
-        const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${key}`;
+        apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${key}`;
 
-        fetch(api)
+        fetch(apiURL)
         .then(res => res.json())
         .then(data => displayWeather(data));
     }
@@ -41,10 +42,9 @@ function displayWeather(data){
     sunRiseSetElement.innerHTML = `Sun rise ${data.sys.sunrise}, Sun set ${data.sys.sunset}`;    
 }
 function getWeatherByGeoLocation(lat,lon){
-        key = '6284b3975ab711a2f7c25e4a1d0434a9';
-        let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
+        apiURL = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
         
-        fetch(url)
+        fetch(apiURL)
             .then(res => res.json())
             .then((data) => displayWeather(data));
     }
@@ -67,8 +67,3 @@ function geoLocation(){
 const geoButton = document.getElementById('currentLocation');
 
 geoButton.addEventListener('click', geoLocation());
-
-// function getGeoLocation(data){
-//     const currentLocationElement = document.querySelector(".current-location p");
-//     currentLocationElement.innerHTML = `Current Location: ${data.name}, ${data.sys.country}`; 
-// }

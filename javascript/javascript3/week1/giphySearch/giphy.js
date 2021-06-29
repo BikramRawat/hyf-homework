@@ -2,8 +2,6 @@
 function displayGif(){
     const userInput = document.getElementById('input').value;
     const numberInput = document.getElementById('number').value;
-    console.log(userInput);
-    console.log(numberInput);
     const giphyApiKey = 'Vw1ofly2GK49lIzWNp8mkPTEgbVGmSnL'; 
     const giphyApiUrl = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=g&limit=${numberInput}&api_key=${giphyApiKey}&lang=en`;
     if(userInput && numberInput){
@@ -11,11 +9,12 @@ function displayGif(){
         .then(res => res.json())
         .then(api => {
             api.data.forEach(element => {
-                console.log(element.images.fixed_height.url);
                 const imgPath = element.images.fixed_height.url;
                 const div = document.createElement('div');
                 const img = document.createElement('img');
                 img.setAttribute('src', imgPath);
+                img.style.width = '200px';
+                img.style.height = '200px';
                 div.appendChild(img);
                 document.body.appendChild(div);
             });
