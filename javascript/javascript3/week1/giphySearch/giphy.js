@@ -16,6 +16,8 @@ function displayGif(){
                 const div = document.createElement('div');
                 const img = document.createElement('img');
                 img.setAttribute('src', imgPath);
+                img.style.width = '200px';
+                img.style.height = '200px';
                 div.appendChild(img);
                 document.body.appendChild(div);
             });
