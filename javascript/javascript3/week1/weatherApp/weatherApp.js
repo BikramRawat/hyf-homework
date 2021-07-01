@@ -1,4 +1,4 @@
-
+let map;
 const inputElement = document.getElementById('input-city');
 const btnElement = document.getElementById('weatherButton');
 const key = '6284b3975ab711a2f7c25e4a1d0434a9';
@@ -51,6 +51,7 @@ function getWeatherByGeoLocation(lat,lon){
 
 const notifyElement = document.querySelector('.notification p');
 function geoLocation(){
+    console.log('hi there');
     if('geolocation' in navigator){
         navigator.geolocation.getCurrentPosition(position => {
             const lat = position.coords.latitude;
@@ -58,12 +59,31 @@ function geoLocation(){
             getWeatherByGeoLocation(lat,lon);
             const currentLocationElement = document.querySelector('.current-location p');
             currentLocationElement.innerHTML = `Latitude ${lat} and Longitude ${lon}`;
+            notifyElement.innerText = '';
+            initMap(lat,lon);
+        },() => {
+            notifyElement.innerText = 'User denied access';
+            
         });
-    }  else{
-
-    notifyElement.innerHTML = alert('User denied access');
     }
 }
 const geoButton = document.getElementById('currentLocation');
 
-geoButton.addEventListener('click', geoLocation());
+geoButton.addEventListener('click', ()=>{
+    geoLocation();
+});
+
+function initMap(lat,lng) {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat,lng },
+      zoom: 8,
+    });
+  }
+
+
+
+
+
+
+
+
