@@ -16,7 +16,10 @@ body{
     padding-bottom : 50px;
     background: burlywood;
 }
-
+#map{
+    height: 400px;
+    width: 100%;
+}
 h1{
     text-align: center;
     padding: 15px;
