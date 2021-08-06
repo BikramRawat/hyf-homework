@@ -37,6 +37,8 @@ class ShoppingCart {
     const input = document.querySelector("#search-box").value;
     if (input) {
       const found = this.products.filter((item) => item.name === input);
+      // The filter method returns an array, so when you log the results it will print Found item is [object object]
+      // i tried to solve this problem but could not solve it , how can i search the product given by the user
       console.log(`Found item is ${found}`);
     } else {
       console.log("search product not found");
@@ -88,7 +90,8 @@ class ShoppingCart {
 
 const shoppingCart = new ShoppingCart();
 const search = document.querySelector("#search-btn");
-search.addEventListener("click", shoppingCart.searchProduct());
+// search.addEventListener("click", shoppingCart.searchProduct());
+search.addEventListener("click", ()=>shoppingCart.searchProduct());
 const flatscreen = new Product("flat-screen", 5000);
 const laptop = new Product("Mac Pro", 9000);
 const computertable = new Product("computer table", 3500);
