@@ -13,6 +13,18 @@ new Promise((resolve) => {
     }, 4000)
 })
 
+// new solution based on the mentors suggestion:
+// use the fetch() method without having to put it inside a promise function as fetch() is in it self a promise.
+const apiURL = 'https://api.github.com/users/deekshasharma';
+    setTimeout(() => {
+        fetch(apiURL)
+        .then(response => response.json())
+        .then(jsonData => {
+            resolve(jsonData);
+            console.log('the location from api using promise .then is :', jsonData.location);
+        })
+    }, 4000)
+
 // above exercise using async/await
 function newPromiseAsync(){
     setTimeout(async() => {
