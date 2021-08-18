@@ -59,7 +59,6 @@ UPDATE meal SET `location` = 'Århus', `description` = 'Pizza, salats and drinks
 WHERE id = LAST_INSERT_ID();
 
 UPDATE meal SET `description` = 'soft and hard drinks'
-
 -- WHERE id = LAST_INSERT_ID();
 WHERE id = 4;
 
@@ -145,19 +144,12 @@ WHERE price < 1000;
 
 -- get meals that still has available reservations
 -- SELECT meal.title, meal.max_reservations,
-<<<<<<< HEAD
--- reservation.no_of_guests 
--- FROM meal
--- JOIN reservation ON meal.id = reservation.meal_id
--- WHERE meal.max_reservations >= reservation.no_of_guests;
-=======
 -- reservation.number_of_guests 
 -- FROM meal
 -- JOIN reservation ON meal.id = reservation.meal_id
--- WHERE meal.max_reservations >= reservation.number_of_guests1;
+-- WHERE meal.max_reservations >= reservation.number_of_guests;
 
 -- new solution
->>>>>>> 847ea58ac005f8fef0e25d459fabcc4199616b83
 
 SELECT 
     COALESCE(SUM(reservation.number_of_guests), 0) AS total_reservation,
