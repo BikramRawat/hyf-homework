@@ -13,17 +13,17 @@ CREATE TABLE `meal` (
     `max_reservations` INT(10) NOT NULL,
     CHECK (max_reservations <= 10),
     `price` DECIMAL(4,2) UNSIGNED NOT NULL,
-    `created_date` DATETIME NOT NULL DEFAULT NOW()
+    `created_date` DATE NOT NULL DEFAULT NOW()
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 CREATE TABLE `reservation` (
     `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `no_of_guests` INT(10) NOT NULL,
+    `number_of_guests` INT(10) NOT NULL,
     `meal_id` INT(10) UNSIGNED NOT NULL,
-    `created_date` DATETIME NOT NULL DEFAULT NOW(),
-    `phone_number` VARCHAR(255) NULL DEFAULT NULL,
+    `created_date` DATE NOT NULL DEFAULT NOW(),
+    `contact_phonenumber` VARCHAR(255) NULL,
     `contact_name` VARCHAR(255) NOT NULL,
-    `contact_email_id` VARCHAR(255) NOT NULL,
+    `contact_email` VARCHAR(255) NOT NULL,
     CONSTRAINT `fk_reservation_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
@@ -33,7 +33,7 @@ CREATE TABLE `review` (
     `description` TEXT NULL DEFAULT NULL,
     `meal_id` INT(10) UNSIGNED NOT NULL,
     `stars` INT(10) UNSIGNED NOT NULL,
-    `created_date` DATETIME NOT NULL DEFAULT NOW(),
+    `created_date` DATE NOT NULL DEFAULT NOW(),
     CONSTRAINT `fk_review_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
@@ -59,7 +59,8 @@ UPDATE meal SET `location` = 'Århus', `description` = 'Pizza, salats and drinks
 WHERE id = LAST_INSERT_ID();
 
 UPDATE meal SET `description` = 'soft and hard drinks'
-WHERE id = LAST_INSERT_ID();
+-- WHERE id = LAST_INSERT_ID();
+WHERE id = 4;
 
 -- delete a meal with any Id
 DELETE FROM meal
@@ -70,10 +71,10 @@ WHERE id = 2;
 SELECT * FROM reservation;
 
 -- add a new reservation
-INSERT INTO reservation (`no_of_guests`,`meal_id`,`phone_number`,`contact_name`,`contact_email_id`)
+INSERT INTO reservation (`number_of_guests`,`meal_id`,`contact_phonenumber`,`contact_name`,`contact_email`)
 VALUES ('12','1','123456','Michael','michael@mail.com');
 
-INSERT INTO reservation (`no_of_guests`,`meal_id`,`phone_number`,`contact_name`,`contact_email_id`)
+INSERT INTO reservation (`number_of_guests`,`meal_id`,`contact_phonenumber`,`contact_name`,`contact_email`)
 VALUES ('20','3','1235456','Michael & John','john@mail.com'),
 ('8','4','3232444','Sara','sara@mail.com');
 
@@ -87,21 +88,21 @@ WHERE id = 1;
 -- update a reservation with any id , update some attributes too
 UPDATE reservation
 SET `contact_name` = 'Bikram',
-`phone_number` = '111222',
-`contact_email_id` = 'bikram44@mail.com';
+`contact_phonenumber` = '111222',
+`contact_email` = 'bikram44@mail.com';
 
 ROLLBACK;
 
 UPDATE reservation
 SET `contact_name` = 'Alexander',
-`phone_number` = '456678',
-`contact_email_id` = 'alex44@mail.com'
+`contact_phonenumber` = '456678',
+`contact_email` = 'alex44@mail.com'
 WHERE id = 6;
 
 UPDATE reservation
 SET `contact_name` = 'Marta',
-`phone_number` = '999222',
-`contact_email_id` = 'marta45@mail.com'
+`contact_phonenumber` = '999222',
+`contact_email` = 'marta45@mail.com'
 WHERE id = 7;
 
 -- delete a reservation with any id 
@@ -109,7 +110,7 @@ DELETE FROM reservation
 WHERE id = 6;
 
 UPDATE reservation
-SET `no_of_guests` = '5'
+SET `number_of_guests` = '5'
 WHERE id = 7;
 
 -- Queries: review TABLE
@@ -142,10 +143,10 @@ WHERE price < 1000;
 
 -- get meals that still has available reservations
 SELECT meal.title, meal.max_reservations,
-reservation.no_of_guests 
+reservation.number_of_guests 
 FROM meal
 JOIN reservation ON meal.id = reservation.meal_id
-WHERE meal.max_reservations >= reservation.no_of_guests;
+WHERE meal.max_reservations >= reservation.number_of_guests;
 
 -- get meals that partially match a title with fx: drinks 
 SELECT * FROM meal
@@ -174,7 +175,7 @@ WHERE review.stars >= 3
 ORDER BY review.stars DESC;
 
 -- Get reservations for a specific meal sorted by created_date
-SELECT meal.title, meal.created_date, reservation.no_of_guests, reservation.phone_number
+SELECT meal.title, meal.created_date, reservation.number_of_guests, reservation.contact_phonenumber
 FROM meal
 JOIN reservation ON meal.id = reservation.meal_id
 WHERE meal.id = 4
