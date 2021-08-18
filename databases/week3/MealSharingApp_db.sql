@@ -141,11 +141,23 @@ SELECT * FROM meal
 WHERE price < 1000;
 
 -- get meals that still has available reservations
-SELECT meal.title, meal.max_reservations,
-reservation.no_of_guests 
-FROM meal
-JOIN reservation ON meal.id = reservation.meal_id
-WHERE meal.max_reservations >= reservation.no_of_guests;
+-- SELECT meal.title, meal.max_reservations,
+-- reservation.no_of_guests 
+-- FROM meal
+-- JOIN reservation ON meal.id = reservation.meal_id
+-- WHERE meal.max_reservations >= reservation.no_of_guests;
+
+SELECT 
+    COALESCE(SUM(reservation.number_of_guests), 0) AS total_reservation,
+    meal.max_reservation,
+    meal.title,
+    meal.id
+FROM
+    meal
+        LEFT JOIN
+    reservation ON reservation.meal_id = meal.id
+GROUP BY meal.id
+HAVING max_reservation > total_reservation;
 
 -- get meals that partially match a title with fx: drinks 
 SELECT * FROM meal
