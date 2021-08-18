@@ -59,6 +59,7 @@ UPDATE meal SET `location` = 'Århus', `description` = 'Pizza, salats and drinks
 WHERE id = LAST_INSERT_ID();
 
 UPDATE meal SET `description` = 'soft and hard drinks'
+
 -- WHERE id = LAST_INSERT_ID();
 WHERE id = 4;
 
@@ -71,6 +72,7 @@ WHERE id = 2;
 SELECT * FROM reservation;
 
 -- add a new reservation
+
 INSERT INTO reservation (`number_of_guests`,`meal_id`,`contact_phonenumber`,`contact_name`,`contact_email`)
 VALUES ('12','1','123456','Michael','michael@mail.com');
 
