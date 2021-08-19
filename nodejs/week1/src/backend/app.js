@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 // import data here
+
 const meals = require("./data/meals");
 const reservations = require("./data/reservations");
 const reviews = require("./data/reviews");
@@ -18,6 +19,7 @@ function randomItem(array) {
 }
 
 // this is where you will be adding your routes
+
 app.get("/", async (request, response) => {
   response.send("Meal Sharing Web App");
 });
@@ -45,7 +47,6 @@ app.get("/reservations", async (request, response) => {
 app.get("/reservation", async (request, response) => {
   response.send(randomItem(reservations));
 });
-
 
 
 module.exports = app;
