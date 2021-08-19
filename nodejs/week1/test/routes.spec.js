@@ -12,6 +12,7 @@ describe("GET /", () => {
   });
 });
 
+
 describe("GET /meals", () => {
   test("responds with all meals (with their reviews, if any) from data file", async () => {
     // Deep copy meals
@@ -27,6 +28,7 @@ describe("GET /meals", () => {
   });
 });
 
+
 describe("GET /cheap-meals", () => {
   test("route exists", async () => {
     const response = await request(app).get("/cheap-meals");
@@ -35,6 +37,7 @@ describe("GET /cheap-meals", () => {
   });
 });
 
+
 describe("GET /large-meals", () => {
   test("route exists", async () => {
     const response = await request(app).get("/large-meals");
@@ -42,6 +45,7 @@ describe("GET /large-meals", () => {
     expect(Array.isArray(response.body)).toBeTruthy();
   });
 });
+
 
 describe("GET /meal", () => {
   test("responds with a single random meal from the data file", async () => {
@@ -59,6 +63,7 @@ describe("GET /meal", () => {
   });
 });
 
+
 describe("GET /reservations", () => {
   test("responds with all the reservations from data file", async () => {
     const response = await request(app).get("/reservations");
@@ -67,6 +72,7 @@ describe("GET /reservations", () => {
     expect(Array.isArray(response.body)).toBeTruthy();
   });
 });
+
 
 describe("GET /reservation", () => {
   test("responds with a single random reservation from the reservation file", async () => {
