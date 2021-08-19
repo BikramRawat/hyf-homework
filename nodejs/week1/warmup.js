@@ -17,5 +17,6 @@ class Circle {
 
 const circle1 = new Circle(10);
 console.log(`For Circle 1: Diameter is = ${circle1.getDiameter().toFixed(3)}, Circumference is = ${circle1.getCircumference().toFixed(3)}, and Area is = ${circle1.getArea().toFixed(3)}`);
+
 const circle2 = new Circle(5);
 console.log(`For Circle 2: Diameter is = ${circle2.getDiameter().toFixed(3)}, Circumference is = ${circle2.getCircumference().toFixed(3)}, and Area is = ${circle2.getArea().toFixed(3)}`);
