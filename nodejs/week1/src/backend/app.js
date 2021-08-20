@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 
 // import data here
-
 const meals = require("./data/meals");
 const reservations = require("./data/reservations");
 const reviews = require("./data/reviews");
@@ -47,6 +46,5 @@ app.get("/reservations", async (request, response) => {
 app.get("/reservation", async (request, response) => {
   response.send(randomItem(reservations));
 });
-
 
 module.exports = app;

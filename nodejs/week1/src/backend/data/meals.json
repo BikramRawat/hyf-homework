@@ -7,7 +7,6 @@
         "createdAt" : "2019/12/7 14:34",
         "price" : 67
     },
-
     {
         "id" : 2,
         "title" : "Danish food in the winter",
@@ -16,7 +15,6 @@
         "createdAt" : "2021/11/17 20:30",
         "price" : 135
     },
-    
     {
         "id" : 3,
         "title" : "Nepali classic breakfast",
