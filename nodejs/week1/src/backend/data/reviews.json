@@ -6,6 +6,7 @@
     "mealId": 3,
     "createdAt": 12345
   },
+
   {
     "id": 2,
     "numberOfStars": 4,
@@ -13,6 +14,7 @@
     "mealId": 1,
     "createdAt": 32453
   }, 
+  
   {
     "id": 1,
     "numberOfStars": 3,
