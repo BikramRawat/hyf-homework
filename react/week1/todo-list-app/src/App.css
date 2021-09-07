@@ -1,5 +1,4 @@
 .App {
-  color: #311cf0;
   font-size: 5vh;
 }
 
@@ -12,4 +11,5 @@
   color: darkmagenta;
   text-align: initial;
   text-transform: capitalize;
+  font-size: 2vh;
 }
