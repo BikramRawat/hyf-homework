@@ -1,19 +1,7 @@
 import "./App.css";
-// Array of todo's
-const todoArray = [
-  {
-    todoDescription: "Get out of bed",
-    deadline: "Wed Sep 13 2021",
-  },
-  {
-    todoDescription: "Brush teeth",
-    deadline: "Thu Sep 14 2021",
-  },
-  {
-    todoDescription: "Eat breakfast",
-    deadline: "Fri Sep 15 2021",
-  },
-];
+import getTodos from "./getTodos";
+
+const todos = getTodos();
 
 // defining the React props variables
 const ToDos = (props) => {
@@ -29,11 +17,11 @@ const ToDos = (props) => {
 // Accessing each todo of the above  todo array
 export default function App() {
   return (
-    <div class="App">
+    <div className="App">
       <h2>Todo List:</h2>
       <h4 id="header">Todo's and the deadlines :- </h4>
       <ul id="todoList">
-        {todoArray.map((todo) => {
+        {todos.map((todo) => {
           return (
             <ToDos
               todoDescription={todo.todoDescription}
