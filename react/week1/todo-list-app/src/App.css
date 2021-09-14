@@ -1,0 +1,15 @@
+.App {
+  font-size: 5vh;
+}
+
+#header {
+  color: #ec0f0f;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3vh;
+}
+#todoList {
+  color: darkmagenta;
+  text-align: initial;
+  text-transform: capitalize;
+  font-size: 2vh;
+}
