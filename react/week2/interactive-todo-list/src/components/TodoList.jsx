@@ -19,7 +19,7 @@ function TodoList(props) {
             </li>
           ))
         ) : (
-          <h1>To do list is empty : No items 🤷‍♂️</h1>
+          <h1>To do list is empty : No items 🤷‍♂️ </h1>
         )}
       </ul>
     </div>

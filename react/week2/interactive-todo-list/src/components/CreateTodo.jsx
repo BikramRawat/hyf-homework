@@ -9,7 +9,7 @@ export default function CreateTodo() {
   const [todo, setTodo] = useState({ title: "", done: false });
   const [todoArr, setTodoArr] = useState([]);
 
-  const onChange = (event) => {
+  const handleChange = (event) => {
     let { value } = event.target;
     let obj = {};
     obj["title"] = value;
@@ -42,6 +42,7 @@ export default function CreateTodo() {
   const deleteTodo = (i) => {
     const updatedTodoArray = todoArr.filter((todo, index) => index !== i);
     setTodoArr(updatedTodoArray);
+    swal("Hey !", "You have deleted the todo !", "info");
   };
 
   return (
@@ -59,7 +60,7 @@ export default function CreateTodo() {
             placeholder="Write a new todo ..."
             value={todo.title}
             onKeyPress={createTodo}
-            onChange={onChange}
+            onChange={handleChange}
           />
           <button
             type="button"
