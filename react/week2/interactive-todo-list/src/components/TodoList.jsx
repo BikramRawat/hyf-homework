@@ -8,12 +8,12 @@ function TodoList(props) {
       <ul>
         {todoArr && todoArr.length > 0 ? (
           todoArr.map((el, i) => (
-            <li key={i}>
+            <li key={el.id}>
               <div className={el["done"] ? "strike-through" : null}>
                 {el.title}
               </div>
               <div>
-                <input type="checkbox" onClick={() => completeTodo(i)} />
+                <input type="checkbox" onClick={() => completeTodo(el.id)} />
                 <button onClick={() => deleteTodo(i)}>Delete</button>
               </div>
             </li>
