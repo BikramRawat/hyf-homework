@@ -33,8 +33,9 @@ export default function CreateTodo() {
 
   const completeTodo = (i) => {
     const updatedTodoArray = [...todoArr];
-    if (updatedTodoArray[i]["done"] !== true) {
-      updatedTodoArray[i]["done"] = true;
+    const index = updatedTodoArray.findIndex((todo) => todo.id === i);
+    if (updatedTodoArray[index]["done"] !== true) {
+      updatedTodoArray[index]["done"] = true;
       setTodoArr(updatedTodoArray);
       swal("Good Job !", "Todo completed", "success");
     }
