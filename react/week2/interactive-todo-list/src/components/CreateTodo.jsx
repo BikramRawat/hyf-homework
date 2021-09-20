@@ -14,6 +14,7 @@ export default function CreateTodo() {
     let obj = {};
     obj["title"] = value;
     obj["done"] = false;
+    obj["id"]= Date.now()
     setTodo(obj);
   };
 
