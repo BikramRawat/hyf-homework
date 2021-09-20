@@ -14,7 +14,7 @@ export default function CreateTodo() {
     let obj = {};
     obj["title"] = value;
     obj["done"] = false;
-    obj["id"]= Date.now()
+    obj["id"] = Date.now();
     setTodo(obj);
   };
 
@@ -23,6 +23,7 @@ export default function CreateTodo() {
     if (event.key === "Enter" || name === "addTodo") {
       if (todo.title !== "") {
         const updatedTodoArray = [todo, ...todoArr];
+        console.log(updatedTodoArray);
         setTodoArr(updatedTodoArray);
         setTodo({ title: "", done: false });
       } else {
@@ -37,7 +38,11 @@ export default function CreateTodo() {
     if (updatedTodoArray[index]["done"] !== true) {
       updatedTodoArray[index]["done"] = true;
       setTodoArr(updatedTodoArray);
+      console.log(updatedTodoArray);
       swal("Good Job !", "Todo completed", "success");
+    } else {
+      updatedTodoArray[index]["done"] = false;
+      setTodoArr(updatedTodoArray);
     }
   };
 
