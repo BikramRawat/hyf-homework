@@ -27,6 +27,9 @@ function CreateTodo() {
     setDeadline(event.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   const createTodo = () => {
     if (todo !== "" && deadline !== "") {
       const newTodoObject = {
@@ -83,45 +86,47 @@ function CreateTodo() {
 
   return (
     <>
-      <div className="box">
-        <div className="text-end">
-          <h2>Interactive Todo App</h2>
-          <Counter />
-          <h4>Add a new todo:</h4>
+      <form onSubmit={handleSubmit}>
+        <div className="box">
+          <div className="text-end">
+            <h2>Interactive Todo App</h2>
+            <Counter />
+            <h4>Add a new todo:</h4>
+          </div>
+          <div className="text-addTodo">
+            <input
+              type="text"
+              name="todo"
+              placeholder="Write a new todo ..."
+              value={todo}
+              onKeyPress={createTodoOnEnter}
+              onChange={handleChange}
+            />{" "}
+            <br />
+            <input
+              type="date"
+              name="date"
+              value={deadline}
+              onChange={handleDeadlineChange}
+            />
+            <button
+              type="button"
+              name="addTodo"
+              className="btn-addTodo"
+              onClick={createTodo}
+            >
+              Add Todo
+            </button>
+          </div>
         </div>
-        <div className="text-addTodo">
-          <input
-            type="text"
-            name="todo"
-            placeholder="Write a new todo ..."
-            value={todo}
-            onKeyPress={createTodoOnEnter}
-            onChange={handleChange}
-          />{" "}
-          <br />
-          <input
-            type="date"
-            name="date"
-            value={deadline}
-            onChange={handleDeadlineChange}
-          />
-          <button
-            type="button"
-            name="addTodo"
-            className="btn-addTodo"
-            onClick={createTodo}
-          >
-            Add Todo
-          </button>
-        </div>
-      </div>
-      <TodoList
-        todoArr={todoArr}
-        createTodo={createTodo}
-        completeTodo={completeTodo}
-        deleteTodo={deleteTodo}
-        editTodo={editTodo}
-      />
+        <TodoList
+          todoArr={todoArr}
+          createTodo={createTodo}
+          completeTodo={completeTodo}
+          deleteTodo={deleteTodo}
+          editTodo={editTodo}
+        />
+      </form>
     </>
   );
 }
