@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { userContext } from "./userContext";
+import { userContext } from "../contexts/userContext";
 
 export default function DisplayUsers() {
   const value = useContext(userContext);

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import SearchInput from "./components/SearchInput";
-import { searchUsersApi } from "./components/searchUsersApi";
-import { UserProvider } from "./components/userContext";
+import { UserProvider } from "./contexts/userContext";
 import "./assets/styles.css";
+import searchUsersApi from "./components/searchUsersApi";
 
 function App() {
   const [githubUsers, setGithubUsers] = useState([]);

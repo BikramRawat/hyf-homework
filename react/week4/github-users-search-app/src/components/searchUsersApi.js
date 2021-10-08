@@ -5,4 +5,4 @@ const searchUsersApi = async (searchQuery) => {
   return API;
 };
 
-export { searchUsersApi };
+export default searchUsersApi;
