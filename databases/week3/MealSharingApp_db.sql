@@ -11,16 +11,15 @@ CREATE TABLE `meal` (
     `location` VARCHAR(255) NOT NULL,
     `when` TIMESTAMP NOT NULL,
     `max_reservations` INT(10) NOT NULL,
-    CHECK (max_reservations <= 10),
     `price` DECIMAL(4,2) UNSIGNED NOT NULL,
-    `created_date` DATE NOT NULL DEFAULT NOW()
+    `created_date` DATE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 CREATE TABLE `reservation` (
     `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `number_of_guests` INT(10) NOT NULL,
     `meal_id` INT(10) UNSIGNED NOT NULL,
-    `created_date` DATE NOT NULL DEFAULT NOW(),
+    `created_date` DATE,
     `contact_phonenumber` VARCHAR(255) NULL,
     `contact_name` VARCHAR(255) NOT NULL,
     `contact_email` VARCHAR(255) NOT NULL,
@@ -33,7 +32,7 @@ CREATE TABLE `review` (
     `description` TEXT NULL DEFAULT NULL,
     `meal_id` INT(10) UNSIGNED NOT NULL,
     `stars` INT(10) UNSIGNED NOT NULL,
-    `created_date` DATE NOT NULL DEFAULT NOW(),
+    `created_date` DATE ,
     CONSTRAINT `fk_review_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
